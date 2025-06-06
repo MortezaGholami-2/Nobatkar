@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Nobatkar_WinUI.Themes">
+
+    <!-- Brand colors -->
+    <Color x:Key="PrimaryColor">#FF006699</Color>
+    <Color x:Key="SecondaryColor">#FF00BFA5</Color>
+    <Color x:Key="AccentColor">#FFFFA000</Color>
+    <Color x:Key="ErrorColor">#FFD32F2F</Color>
+
+    <!--<Color x:Key="PersianColor">#</Color>-->
+
+
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+    
+</ResourceDictionary>

@@ -14,6 +14,25 @@
     </Window.SystemBackdrop>
 
     <Grid>
+        <!-- Custom Title Bar -->
+        <Grid x:Name="AppTitleBar" Height="48" Background="#FF2D2D30" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Padding="12,0,0,0">
+                <TextBlock Text="🌓 نوبت‌کار" FontSize="18" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+
+            <!--<StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center">
+                <Button Style="{StaticResource AppWindowTitleBarMinimizeButtonStyle}" />
+                <Button Style="{StaticResource AppWindowTitleBarMaximizeButtonStyle}" />
+                <Button Style="{StaticResource AppWindowTitleBarCloseButtonStyle}" />
+            </StackPanel>-->
+        </Grid>
+
+        <!-- Page Content -->
+        <Frame x:Name="RootFrame" Margin="0,48,0,0" />
     </Grid>
 </Window>

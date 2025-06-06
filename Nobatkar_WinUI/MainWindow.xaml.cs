@@ -10,6 +10,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Nobatkar_WinUI.Views;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -26,6 +27,15 @@ namespace Nobatkar_WinUI
         public MainWindow()
         {
             InitializeComponent();
+
+            // Extend content into the title bar
+            ExtendsContentIntoTitleBar = true;
+
+            // Set a XAML element as the draggable region
+            SetTitleBar(AppTitleBar);
+
+            // Navigate to MainPage
+            RootFrame.Navigate(typeof(MainPage));
         }
     }
 }
