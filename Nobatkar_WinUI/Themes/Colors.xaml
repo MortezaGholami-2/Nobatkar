@@ -10,7 +10,26 @@
     <Color x:Key="AccentColor">#FFFFA000</Color>
     <Color x:Key="ErrorColor">#FFD32F2F</Color>
 
-    <!--<Color x:Key="PersianColor">#</Color>-->
+    <!-- ChatGPT Classic Persian colors -->
+    <Color x:Key="PersianBlueColor">#1C39BB</Color>
+    <Color x:Key="PersianGreenColor">#00A693</Color>
+    <Color x:Key="PersianRedColor">#CC3333</Color>
+    <Color x:Key="PersianOrangeColor">#D99058</Color>
+    <Color x:Key="PersianRoseColor">#FE28A2</Color>
+
+    <!-- ChatGPT Elegant Persian colors -->
+    <Color x:Key="PersianIndigoColor">#32127A</Color>
+    <Color x:Key="PersianPlumColor">#701C1C</Color>
+    <Color x:Key="PersianPinkColor">#F77FBE</Color>
+    <Color x:Key="PersianGoldColor">#D4AF37</Color>
+    <Color x:Key="PersianTurquoiseColor">#30D5C8</Color>
+
+    <!-- ChatGPT Modern Persian colors -->
+    <Color x:Key="MidnightBlueColor">#191970</Color>
+    <Color x:Key="CrimsonRedColor">#DC143C</Color>
+    <Color x:Key="SaffronYellowColor">#F4C430</Color>
+    <Color x:Key="JadeGreenColor">#00A86B</Color>
+    <Color x:Key="IvoryWhiteColor">#FFFFF0</Color>
 
 
     <!-- Brushes -->
