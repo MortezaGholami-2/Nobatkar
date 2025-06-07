@@ -5,9 +5,13 @@
     xmlns:local="using:Nobatkar_WinUI.Themes">
 
     <!-- Brand colors -->
-    <Color x:Key="PrimaryColor">#FF006699</Color>
-    <Color x:Key="SecondaryColor">#FF00BFA5</Color>
-    <Color x:Key="AccentColor">#FFFFA000</Color>
+    <Color x:Key="AccentColor">#2054D7</Color>
+    <Color x:Key="PrimaryColor">#F1AF5E</Color>
+    <Color x:Key="PrimaryColor3">#6B7DAA</Color>
+    <Color x:Key="SecondaryColor">#151B2B</Color>
+    <Color x:Key="SecondaryColor2">#B3C1E3</Color>
+    <Color x:Key="SecondaryColor3">#DDE6FC</Color>
+    <Color x:Key="SecondaryColor4">#FFF2E3</Color>
     <Color x:Key="ErrorColor">#FFD32F2F</Color>
 
     <!-- ChatGPT Classic Persian colors -->
@@ -31,10 +35,46 @@
     <Color x:Key="JadeGreenColor">#00A86B</Color>
     <Color x:Key="IvoryWhiteColor">#FFFFF0</Color>
 
+    <!-- WonderSend app colors -->
+    <Color x:Key="DarkSlateGrayColor">#2C2E2F</Color>
+    <Color x:Key="YellowSulfurColor">#F9F800</Color>
+    <Color x:Key="SyntheticWhiteColor">#FFFFFF</Color>
+    <Color x:Key="ManateeColor">#88898F</Color>
+    <Color x:Key="LinkWaterColor">#D0D1D8</Color>
+
+    <!-- Schedule app colors -->
+    <Color x:Key="CeruleanBlueColor">#2054D7</Color>
+    <Color x:Key="IndianYellowColor">#F1AF5E</Color>
+    <Color x:Key="GlaucousColor">#6B7DAA</Color>
+    <Color x:Key="RaisinBlackColor">#151B2B</Color>
+    <Color x:Key="LightSteelBlueColor">#B3C1E3</Color>
+    <Color x:Key="LavenderWebColor">#DDE6FC</Color>
+    <Color x:Key="LinenColor">#FFF2E3</Color>
+
+    <!-- JobDone app colors -->
+    <Color x:Key="BlueDarkColor">#2A68D3</Color>
+    <Color x:Key="BlueLightColor">#2F74EB</Color>
+    <Color x:Key="GreenDarkColor">#289374</Color>
+    <Color x:Key="GreenLightColor">#33B892</Color>
+    <Color x:Key="RedDarkColor">#D35249</Color>
+    <Color x:Key="RedLightColor">#FA675C</Color>
+    <Color x:Key="BlackColor">#16243D</Color>
+    <Color x:Key="GrayColor">#586479</Color>
+    <Color x:Key="OrangeDarkColor">#F98531</Color>
+    <Color x:Key="OrangeLightColor">#FFA362</Color>
+
+    <!-- RemindMe app colors -->
+    <!--<Color x:Key="BlueDarkColor">#2A68D3</Color>
+    <Color x:Key="BlueLightColor">#2F74EB</Color>
+    <Color x:Key="GreenDarkColor">#289374</Color>
+    <Color x:Key="GreenLightColor">#33B892</Color>
+    <Color x:Key="RedDarkColor">#D35249</Color>
+    <Color x:Key="RedLightColor">#FA675C</Color>-->
 
     <!-- Brushes -->
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
     <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
-    
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource SecondaryColor3}" />
+
 </ResourceDictionary>
