@@ -15,26 +15,26 @@ using Windows.Storage.Pickers;
 
 namespace Nobatkar_WinUI.ViewModels;
 
-public class MainPageViewModel : ObservableRecipient
+public partial class MainPageViewModel : ObservableRecipient
 {
-    public INavigationService NavigationService { get; }
+    //public INavigationService NavigationService { get; }
 
     [ObservableProperty]
     private bool isBackEnabled;
 
-    public MainPageViewModel(INavigationService navigationService)
+    public MainPageViewModel(/*INavigationService navigationService*/)
     {
-        NavigationService = navigationService;
-        NavigationService.Navigated += OnNavigated;
+        //NavigationService = navigationService;
+        //NavigationService.Navigated += OnNavigated;
 
     }
 
-    private void OnNavigated(object sender, NavigationEventArgs e) => IsBackEnabled = NavigationService.CanGoBack;
+    //private void OnNavigated(object sender, NavigationEventArgs e) => IsBackEnabled = NavigationService.CanGoBack;
 
     [RelayCommand]
     private void GotoSettingsPage()
     {
-        NavigationService.NavigateTo(typeof(SettingsViewModel).FullName!);
+        //NavigationService.NavigateTo(typeof(SettingsViewModel).FullName!);
 
         //var appWindow = Windows.UI.WindowManagement.AppWindow.TryCreateAsync();
 
@@ -87,8 +87,8 @@ public class MainPageViewModel : ObservableRecipient
     }
 
 
-    [RelayCommand]
-    private void GotoListDetailsPage() => NavigationService.NavigateTo(typeof(ListDetailsViewModel).FullName!);
+    //[RelayCommand]
+    //private void GotoListDetailsPage() => NavigationService.NavigateTo(typeof(ListDetailsViewModel).FullName!);
 
     [RelayCommand]
     private async Task RunNotepad()

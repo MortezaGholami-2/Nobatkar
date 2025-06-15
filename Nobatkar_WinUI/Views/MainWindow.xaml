@@ -7,79 +7,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:windowex="using:WinUIEx"
-    mc:Ignorable="d"
-    Title="Nobatkar_WinUI">
+    MinWidth="500"
+    MinHeight="500"
+    PersistenceId="MainWindow"
+    mc:Ignorable="d">
 
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid BorderBrush="{StaticResource IvoryWhiteColor}"
-          BorderThickness="5"
-          Background="#ebf0fc" CornerRadius="15" FlowDirection="RightToLeft">
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
-        <!--#region Custom Title Bar -->
-        <Grid x:Name="AppTitleBar"
-              Height="48"
-              Background="{StaticResource BackgroundBrush}"
-              VerticalAlignment="Top"
-              Padding="10" ColumnSpacing="10">
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-
-            <!-- Icon -->
-            <TextBlock Grid.Column="0" Text="ggg" FontSize="18" FontWeight="Bold" Foreground="Black" />
-
-            <!-- App Name -->
-            <TextBlock Grid.Column="1" Text="نوبت‌کار" FontSize="18" FontWeight="Bold" Foreground="Black" />
-
-            <!-- Hello -->
-            <!-- Window Buttons -->
-
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Padding="12,0,0,0">
-
-            </StackPanel>
-
-            <!--<StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center">
-                <Button Style="{StaticResource AppWindowTitleBarMinimizeButtonStyle}" />
-                <Button Style="{StaticResource AppWindowTitleBarMaximizeButtonStyle}" />
-                <Button Style="{StaticResource AppWindowTitleBarCloseButtonStyle}" />
-            </StackPanel>-->
-        </Grid>
-        <!--#endregion-->
-        
-        <!--#region Navigation View -->
-        <Grid x:Name="NavigationView" Grid.Row="1">
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <!--#region Navigation Menu-->
-            <StackPanel Orientation="Vertical">
-                <Button Content="Calendar" />
-                <Button Content="Work Shift" />
-                <Button Content="Medicine" />
-            </StackPanel>
-            <!--#endregion-->
-            
-            <!-- Page Content -->
-            <Frame x:Name="RootFrame" Background="White" CornerRadius="15,0,0,0" Grid.Column="1" Margin="0,48,0,0" />
-
-        </Grid>
-        <!--#endregion-->
-        
-    </Grid>
 </windowex:WindowEx>
