@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Nobatkar_WinUI.ViewModels
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class CalendarPageViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<ShiftDay> Days { get; set; }
 
@@ -25,7 +25,7 @@ namespace Nobatkar_WinUI.ViewModels
             }
         }
 
-        public MainViewModel()
+        public CalendarPageViewModel()
         {
             LoadMockData();
         }
@@ -66,5 +66,6 @@ namespace Nobatkar_WinUI.ViewModels
         protected void OnPropertyChanged([CallerMemberName] string? name = null) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
+
 
 }

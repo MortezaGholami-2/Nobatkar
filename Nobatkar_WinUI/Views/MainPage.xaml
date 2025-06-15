@@ -10,46 +10,33 @@
     xmlns:models="using:Nobatkar_WinUI.Models"
     mc:Ignorable="d">
 
-    <Page.DataContext>
-        <vm:MainViewModel />
-    </Page.DataContext>
+    <Grid x:Name="ContentArea">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-    <StackPanel Padding="20" Spacing="16">
+        <TextBlock
+            Grid.Row="0"
+            x:Uid="Main_Title"
+            Style="{StaticResource PageTitleStyle}" />
 
-        <!--Title and Add Button-->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Spacing="10">
-            <TextBlock Text="نوبت‌کار" FontSize="28" FontWeight="Bold" />
-            <Button Content="➕ افزودن نوبت" Click="AddShift_Click" HorizontalAlignment="Right"/>
-        </StackPanel>
+        <Grid Grid.Row="1">
 
-        <!--Month Navigation-->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
-            <Button Content="◀" Click="PreviousMonth_Click"/>
-            <TextBlock Text="{x:Bind ViewModel.CurrentMonthTitle, Mode=OneWay}" FontSize="20" />
-            <Button Content="▶" Click="NextMonth_Click"/>
-        </StackPanel>
+            <StackPanel Orientation="Vertical">
 
-        <!--Calendar Grid-->
-        <Grid>
-            <ItemsControl ItemsSource="{x:Bind ViewModel.Days, Mode=OneWay}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapGrid Orientation="Horizontal" MaximumRowsOrColumns="7"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
+                <Button x:Name="SettingsButton"
+                        x:Uid="SettingsButton" Content="Settings" Command="{x:Bind ViewModel.GotoSettingsPageCommand}" />
 
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate x:DataType="models:ShiftDay">
-                        <Border Margin="4" Padding="10" Background="LightGray" CornerRadius="8">
-                            <StackPanel>
-                                <TextBlock Text="{x:Bind DayNumber}" FontWeight="Bold"/>
-                                <TextBlock Text="{x:Bind ShiftLabel}" FontSize="12" Foreground="DarkBlue"/>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                <Button x:Name="ListDetailsButton"
+                        x:Uid="ListDetailsButton" Content="List Details" Command="{x:Bind ViewModel.GotoListDetailsPageCommand}" />
+
+                <Button x:Name="RunNotepadButton"
+                        Content="Run Notepad" Command="{x:Bind ViewModel.RunNotepadCommand}" />
+
+            </StackPanel>
+
         </Grid>
 
-    </StackPanel>
+    </Grid>
 </Page>

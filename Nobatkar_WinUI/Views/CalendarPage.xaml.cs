@@ -22,17 +22,29 @@ namespace Nobatkar_WinUI.Views;
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
-public sealed partial class MainPage : Page
+public sealed partial class CalendarPage : Page
 {
-    public MainPageViewModel ViewModel
+    public CalendarPageViewModel ViewModel { get; } = new CalendarPageViewModel();
+
+    public CalendarPage()
     {
-        get;
+        this.InitializeComponent();
     }
 
-    public MainPage()
+    private void PreviousMonth_Click(object sender, RoutedEventArgs e)
     {
-        ViewModel = App.GetService<MainPageViewModel>();
-        InitializeComponent();
+        ViewModel.GoToPreviousMonth();
+    }
+
+    private void NextMonth_Click(object sender, RoutedEventArgs e)
+    {
+        ViewModel.GoToNextMonth();
+    }
+
+    private void AddShift_Click(object sender, RoutedEventArgs e)
+    {
+        // TODO: Open Add Shift Dialog (can use ContentDialog)
+        ViewModel.AddDummyShiftPlan(); // Placeholder for now
     }
 
 }
