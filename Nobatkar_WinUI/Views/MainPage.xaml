@@ -94,7 +94,9 @@
 
             <!--#region Navigation Menu-->
             <StackPanel Orientation="Vertical">
-                <Button Content="Calendar" />
+                <Button x:Name="CalendarPageButton"
+                        Content="تقویم"
+                        Command="{x:Bind ViewModel.GotoCalendarPageCommand}"/>
                 <Button Content="Work Shift" />
                 <Button Content="Medicine" />
             </StackPanel>

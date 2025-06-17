@@ -9,8 +9,10 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Microsoft.UI.Xaml.Shapes;
+using Nobatkar_WinUI.Helpers;
 using Nobatkar_WinUI.Interfaces.IServices;
 using Nobatkar_WinUI.Services;
+using Nobatkar_WinUI.ViewModels;
 using Nobatkar_WinUI.Views;
 using System;
 using System.Collections.Generic;
@@ -18,7 +20,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
+//using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using WinUIEx;
@@ -44,7 +46,6 @@ public partial class App : Application
         return service;
     }
     public static WindowEx MainWindow { get; } = new MainWindow();
-    //private Window? _window;
     public static UIElement? AppTitlebar { get; set; }
 
     /// <summary>
@@ -59,12 +60,22 @@ public partial class App : Application
             .UseContentRoot(AppContext.BaseDirectory)
             .ConfigureServices((context, services) =>
             {
+                // Default Activation Handler
+                services.AddTransient<ActivationHandler<LaunchActivatedEventArgs>, DefaultActivationHandler>();
+
+                // Other Activation Handlers
+                //services.AddTransient<IActivationHandler, AppNotificationActivationHandler>();
+
                 // Services
                 services.AddSingleton<IActivationService, ActivationService>();
+                services.AddSingleton<IPageService, PageService>();
+                services.AddSingleton<INavigationService, NavigationService>();
 
                 // Views and ViewModels
                 services.AddTransient<MainPage>();
+                services.AddTransient<MainPageViewModel>();
                 services.AddTransient<CalendarPage>();
+                services.AddTransient<CalendarPageViewModel>();
             }).Build();
 
         UnhandledException += App_UnhandledException;

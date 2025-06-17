@@ -1,4 +1,5 @@
-﻿using Nobatkar_WinUI.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Nobatkar_WinUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Nobatkar_WinUI.ViewModels
 {
-    public class CalendarPageViewModel : INotifyPropertyChanged
+    public class CalendarPageViewModel : ObservableRecipient
     {
         public ObservableCollection<ShiftDay> Days { get; set; }
 

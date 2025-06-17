@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Xaml.Navigation;
+using Nobatkar_WinUI.Interfaces.IServices;
 using Nobatkar_WinUI.Models;
+using Nobatkar_WinUI.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,19 +19,19 @@ namespace Nobatkar_WinUI.ViewModels;
 
 public partial class MainPageViewModel : ObservableRecipient
 {
-    //public INavigationService NavigationService { get; }
+    public INavigationService NavigationService { get; }
 
     [ObservableProperty]
     private bool isBackEnabled;
 
-    public MainPageViewModel(/*INavigationService navigationService*/)
+    public MainPageViewModel(INavigationService navigationService)
     {
-        //NavigationService = navigationService;
-        //NavigationService.Navigated += OnNavigated;
+        NavigationService = navigationService;
+        NavigationService.Navigated += OnNavigated;
 
     }
 
-    //private void OnNavigated(object sender, NavigationEventArgs e) => IsBackEnabled = NavigationService.CanGoBack;
+    private void OnNavigated(object sender, NavigationEventArgs e) => IsBackEnabled = NavigationService.CanGoBack;
 
     [RelayCommand]
     private void GotoSettingsPage()
@@ -89,6 +91,9 @@ public partial class MainPageViewModel : ObservableRecipient
 
     //[RelayCommand]
     //private void GotoListDetailsPage() => NavigationService.NavigateTo(typeof(ListDetailsViewModel).FullName!);
+
+    [RelayCommand]
+    private void GotoCalendarPage() => NavigationService.NavigateTo(typeof(CalendarPageViewModel).FullName!);
 
     [RelayCommand]
     private async Task RunNotepad()
