@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Nobatkar.App (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Nobatkar.App (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

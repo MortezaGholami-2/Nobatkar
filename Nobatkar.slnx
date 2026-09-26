@@ -1,0 +1,22 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/source/">
+    <Project Path="source/Nobatkar.App/Nobatkar.App.csproj">
+      <Platform Solution="*|ARM64" Project="ARM64" />
+      <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="*|x86" Project="x86" />
+      <Deploy />
+    </Project>
+    <Project Path="source/Nobatkar.Application/Nobatkar.Application.csproj" />
+    <Project Path="source/Nobatkar.Domain/Nobatkar.Domain.csproj" />
+    <Project Path="source/Nobatkar.Infrastructure/Nobatkar.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Nobatkar.Application.Tests/Nobatkar.Application.Tests.csproj" Id="9839f1eb-8883-47d1-a446-57e86c889b2e" />
+    <Project Path="tests/Nobatkar.Domain.Tests/Nobatkar.Domain.Tests.csproj" Id="5af00993-dac8-4768-b677-5cd66c4c39af" />
+  </Folder>
+</Solution>
