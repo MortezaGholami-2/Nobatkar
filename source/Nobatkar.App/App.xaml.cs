@@ -43,7 +43,7 @@ public partial class App : Microsoft.UI.Xaml.Application
 
         var services = new ServiceCollection();
         services.AddSingleton<IShiftScheduleRepository, ShiftScheduleRepository>();
-        services.AddTransient<ShiftCalculator>();
+        services.AddSingleton<IShiftCalculator, ShiftCalculator>();
         services.AddTransient<MainWindow>();
 
         _serviceProvider = services.BuildServiceProvider();

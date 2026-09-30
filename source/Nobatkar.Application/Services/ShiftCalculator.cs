@@ -4,13 +4,25 @@ using Nobatkar.Domain.Enums;
 
 namespace Nobatkar.Application.Services;
 
-public class ShiftCalculator
+public class ShiftCalculator : IShiftCalculator
 {
     private readonly IShiftScheduleRepository _repository;
 
     public ShiftCalculator(IShiftScheduleRepository repository)
     {
         _repository = repository;
+    }
+
+    public Task<ShiftSchedule?> GetScheduleAsync()
+    {
+        return _repository.GetAsync();
+    }
+
+    public Task SaveScheduleAsync(ShiftSchedule schedule)
+    {
+        ArgumentNullException.ThrowIfNull(schedule);
+        
+        return _repository.SaveAsync(schedule);
     }
 
     public ShiftType GetShiftForDate(ShiftSchedule schedule, DateOnly date)

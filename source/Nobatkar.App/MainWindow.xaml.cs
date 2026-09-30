@@ -5,6 +5,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Nobatkar.Application.Interfaces;
 using Nobatkar.Application.Services;
 using System;
 using System.Collections.Generic;
@@ -24,9 +25,9 @@ namespace Nobatkar.App;
 /// </summary>
 public sealed partial class MainWindow : Window
 {
-    private readonly ShiftCalculator _shiftCalculator;
+    private readonly IShiftCalculator _shiftCalculator;
 
-    public MainWindow(ShiftCalculator shiftCalculator)
+    public MainWindow(IShiftCalculator shiftCalculator)
     {
         InitializeComponent();
 
