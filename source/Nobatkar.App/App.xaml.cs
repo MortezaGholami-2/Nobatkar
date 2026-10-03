@@ -7,6 +7,9 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Microsoft.UI.Xaml.Shapes;
+using Nobatkar.App.Services;
+using Nobatkar.App.ViewModels;
+using Nobatkar.App.Views;
 using Nobatkar.Application.Interfaces;
 using Nobatkar.Application.Services;
 using Nobatkar.Infrastructure.Persistence;
@@ -42,10 +45,21 @@ public partial class App : Microsoft.UI.Xaml.Application
         InitializeComponent();
 
         var services = new ServiceCollection();
+        
         services.AddSingleton<IShiftScheduleRepository, ShiftScheduleRepository>();
-        services.AddSingleton<IShiftCalculator, ShiftCalculator>();
-        services.AddTransient<MainWindow>();
+        services.AddTransient<IShiftCalculator, ShiftCalculator>();
+        
+        services.AddTransient<MainViewModel>();
+        services.AddTransient<DashboardViewModel>();
+        services.AddTransient<ShiftPlanViewModel>();
 
+        services.AddTransient<DashboardView>();
+        services.AddTransient<ShiftPlanView>();
+
+        services.AddSingleton<NavigationHost>();
+        services.AddSingleton<INavigationService, NavigationService>();
+
+        services.AddTransient<MainWindow>();
         _serviceProvider = services.BuildServiceProvider();
     }
 
