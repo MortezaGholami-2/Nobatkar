@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.UI.Xaml.Controls;
 
 namespace Nobatkar.App.Services;
 
 public interface INavigationService
 {
-    void ShowDashboard();
+    void NavigateTo<TView>() where TView : Page;
 
-    void ShowShiftPlan();
 }

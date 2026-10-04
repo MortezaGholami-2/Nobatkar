@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.UI.Xaml.Controls;
 using Nobatkar.App.Views;
 using System;
 using System.Collections.Generic;
@@ -17,16 +18,10 @@ public class NavigationService : INavigationService
         _navigationHost = navigationHost;
     }
 
-    public void ShowDashboard()
+    public void NavigateTo<TView>() where TView : Page
     {
-        var dashboardView = _serviceProvider.GetRequiredService<DashboardView>();
-        _navigationHost.Frame!.Content = dashboardView;
-    }
-
-    public void ShowShiftPlan()
-    {
-        var shiftPlanView = _serviceProvider.GetRequiredService<ShiftPlanView>();
-        _navigationHost.Frame!.Content = shiftPlanView;
+        var view = _serviceProvider.GetRequiredService<TView>();
+        _navigationHost.Frame!.Content = view;
     }
 
 }

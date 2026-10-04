@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Nobatkar.App.Services;
+using Nobatkar.App.Views;
 using Nobatkar.Application.Interfaces;
 using Nobatkar.Domain.Entities;
 using Nobatkar.Domain.Enums;
@@ -71,7 +72,7 @@ public partial class ShiftPlanViewModel : ObservableObject
 
         await _shiftCalculator.SaveScheduleAsync(schedule);
 
-        _navigationService.ShowDashboard();
+        _navigationService.NavigateTo<DashboardView>();
     }
 
 }
