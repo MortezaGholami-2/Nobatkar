@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -32,5 +33,13 @@ public sealed partial class ShiftPlanView : Page
 
         _viewModel = viewModel;
         DataContext = _viewModel;
+
+        _ = InitializeAsync();
     }
+
+    private async Task InitializeAsync()
+    {
+        await _viewModel.LoadAsync();
+    }
+
 }

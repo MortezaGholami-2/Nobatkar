@@ -22,6 +22,11 @@
             <TextBox Text="{Binding PlanName, Mode=TwoWay}"
                      PlaceholderText="Enter a name for the shift plan." />
 
+            <InfoBar IsOpen="{Binding HasValidationError}"
+                     Severity="Error"
+                     Message="{Binding ValidationMessage}"
+                     IsClosable="False" />
+
             <TextBlock Text="Start date"
                        FontSize="16"
                        Margin="0,8,0,0" />
@@ -73,7 +78,7 @@
                     HorizontalAlignment="Left" />
             
             <Button Content="Save Shift Plan"
-                    Command="{Binding SaveShiftPlanAsyncCommand}"
+                    Command="{Binding SaveShiftPlanCommand}"
                     HorizontalAlignment="Left"
                     Margin="0,16,0,0"/>
             

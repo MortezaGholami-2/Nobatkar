@@ -28,14 +28,41 @@ public partial class ShiftPlanViewModel : ObservableObject
     [ObservableProperty]
     public partial ShiftType SelectedShift { get; set; } = ShiftType.Morning;
 
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(HasValidationError))]
+    public partial string ValidationMessage { get; set; } = string.Empty;
+
     public ObservableCollection<ShiftType> Shifts { get; } = [];
 
     public IReadOnlyList<ShiftType> ShiftTypes { get; } = Enum.GetValues<ShiftType>();
+
+    public bool HasValidationError =>
+        !string.IsNullOrEmpty(ValidationMessage);
 
     public ShiftPlanViewModel(INavigationService navigationService, IShiftCalculator shiftCalculator)
     {
         _navigationService = navigationService;
         _shiftCalculator = shiftCalculator;
+    }
+
+    public async Task LoadAsync()
+    {
+        var schedule = await _shiftCalculator.GetScheduleAsync();
+
+        if (schedule is null)
+        {
+            return;
+        }
+
+        PlanName = schedule.Pattern.Name;
+        StartDate = schedule.StartDate.ToDateTime(TimeOnly.MinValue);
+
+        Shifts.Clear();
+
+        foreach (var shift in schedule.Pattern.Shifts)
+        {
+            Shifts.Add(shift);
+        }
     }
 
     [RelayCommand]
@@ -56,13 +83,23 @@ public partial class ShiftPlanViewModel : ObservableObject
     [RelayCommand]
     private async Task SaveShiftPlanAsync()
     {
+        ValidationMessage = string.Empty;
+
         if (string.IsNullOrWhiteSpace(PlanName))
         {
+            ValidationMessage = "Please enter a name for the shift plan.";
+            return;
+        }
+
+        if (StartDate == default)
+        {
+            ValidationMessage = "Please select a valid start date.";
             return;
         }
 
         if (Shifts.Count == 0)
         {
+            ValidationMessage = "Please add at least one shift to the pattern.";
             return;
         }
 
