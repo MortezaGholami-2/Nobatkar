@@ -52,9 +52,11 @@ public partial class App : Microsoft.UI.Xaml.Application
         services.AddTransient<MainViewModel>();
         services.AddTransient<DashboardViewModel>();
         services.AddTransient<ShiftPlanViewModel>();
+        services.AddTransient<CalendarViewModel>();
 
         services.AddTransient<DashboardView>();
         services.AddTransient<ShiftPlanView>();
+        services.AddTransient<Views.CalendarView>();
 
         services.AddSingleton<NavigationHost>();
         services.AddSingleton<INavigationService, NavigationService>();

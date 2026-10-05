@@ -50,4 +50,10 @@ public partial class DashboardViewModel : ObservableObject
         _navigationService.NavigateTo<ShiftPlanView>();
     }
 
+    [RelayCommand]
+    private void OpenCalendar()
+    {
+        _navigationService.NavigateTo<CalendarView>();
+    }
+
 }
